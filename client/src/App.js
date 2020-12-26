@@ -5,7 +5,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Import pages
-//import Home from "./pages/Home";
+import Home from "./pages/Home";
 
 //Import components
 
@@ -14,9 +14,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div>
-        Content will go here
-      </div>
+      <Route exact path="/home" component={Home}/>
     </Router>
   );
 }
