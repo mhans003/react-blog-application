@@ -10,11 +10,19 @@ import Home from "./pages/Home";
 //Import components
 
 //Import global store
+import { StoreProvider } from "./utils/GlobalState";
 
 function App() {
   return (
     <Router>
-      <Route exact path="/home" component={Home}/>
+      <div>
+        <StoreProvider>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/home" component={Home}/>
+          </Switch>
+        </StoreProvider>
+      </div>
     </Router>
   );
 }

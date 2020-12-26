@@ -23,8 +23,8 @@ mongoose.connect(
 );
 
 //Routes
-//const routes = require("./routes");
-//app.use(routes);
+const routes = require("./routes");
+app.use(routes);
 
 //Start the server.
 app.listen(PORT, () => {
