@@ -12,11 +12,19 @@ const PORT = process.env.PORT || 3001;
 
 //Set up Mongoose/MongoDB 
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/blogapplication-mh");
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/blogapplication-mh", 
+    { 
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
+);
 
 //Routes
-const routes = require("./routes");
-app.use(routes);
+//const routes = require("./routes");
+//app.use(routes);
 
 //Start the server.
 app.listen(PORT, () => {
