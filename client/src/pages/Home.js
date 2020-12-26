@@ -1,15 +1,19 @@
 import React from "react";
+
+//Include components
 import { Col, Row, Container } from "../components/Grid";
+import PostForm from "../components/PostForm";
+import PostList from "../components/PostList";
 
 const Home = () => {
     return (
         <Container fluid>
             <Row>
                 <Col size="md-6">
-                    Create post form will go here
+                    <PostForm/>
                 </Col>
                 <Col size="md-6 sm-12">
-                    List of posts will go here
+                    <PostList/>
                 </Col>
             </Row>
         </Container>
