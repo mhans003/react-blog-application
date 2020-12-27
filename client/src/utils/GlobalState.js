@@ -6,7 +6,10 @@ import {
     LOADING,
     SET_CURRENT_POST,
     ADD_POST,
-    REMOVE_POST
+    REMOVE_POST,
+    REMOVE_FAVORITE,
+    UPDATE_FAVORITES
+
 } from "./actions";
 
 //Create the Global Store.
@@ -42,7 +45,20 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 posts: state.posts.filter(post => {
-                    return post._id !== action.id;
+                    return post._id !== action._id;
+                })
+            };
+        case UPDATE_FAVORITES: 
+            return {
+                ...state,
+                favorites: [...state.favorites],
+                loading: false
+            };
+        case REMOVE_FAVORITE:
+            return {
+                ...state,
+                favorites: state.favorites.filter(post => {
+                    return post._id !== action._id;
                 })
             };
         default:
