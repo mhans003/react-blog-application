@@ -5,7 +5,8 @@ import {
     UPDATE_POSTS,
     LOADING,
     SET_CURRENT_POST,
-    ADD_POST
+    ADD_POST,
+    REMOVE_POST
 } from "./actions";
 
 //Create the Global Store.
@@ -36,6 +37,13 @@ const reducer = (state, action) => {
                 ...state,
                 posts: [action.post, ...state.posts],
                 loading: false
+            };
+        case REMOVE_POST:
+            return {
+                ...state,
+                posts: state.posts.filter(post => {
+                    return post._id !== action.id;
+                })
             };
         default:
             return state;

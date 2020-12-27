@@ -3,13 +3,14 @@ import { useEffect } from "react";
 //Include components
 import { Link } from "react-router-dom";
 import { ListItem, List } from "../List";
+import DeleteBtn from "../DeleteBtn";
 
 //Include Global Store
 import { useStoreContext } from "../../utils/GlobalState";
 
 //Include actions and API functions
 import API from "../../utils/API";
-import { UPDATE_POSTS, LOADING } from "../../utils/actions";
+import { UPDATE_POSTS, LOADING, REMOVE_POST } from "../../utils/actions";
 
 function PostList() {
     //Declare state and dispatch below
@@ -25,6 +26,18 @@ function PostList() {
                 dispatch({
                     type: UPDATE_POSTS,
                     posts: results.data
+                });
+            })
+            .catch(error => console.log(error));
+    };
+
+    //Delete post matching this ID.
+    const removePost = id => {
+        API.deletePost(id)
+            .then(() => {
+                dispatch({
+                    type: REMOVE_POST,
+                    _id: id
                 });
             })
             .catch(error => console.log(error));
@@ -47,7 +60,7 @@ function PostList() {
                                     {post.title} by {post.author}
                                 </strong>
                             </Link>
-                            <button>Delete BTN Placeholder</button>
+                            <DeleteBtn onClick={() => removePost(post._id)}/>
                         </ListItem>
                     ))}
                 </List>

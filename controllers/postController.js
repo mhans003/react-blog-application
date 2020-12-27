@@ -20,5 +20,12 @@ module.exports = {
         Post.create(request.body)
             .then(dbModel => response.json(dbModel))
             .catch(error => response.status(422).json(error));
+    },
+    //Delete one post from the database using the ID passed in.
+    remove: function(request, response) {
+        Post.findById({ _id: request.params.id })
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => response.json(dbModel))
+            .catch(error => response.json(422).json(error));
     }
 };

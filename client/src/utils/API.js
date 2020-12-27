@@ -13,5 +13,9 @@ export default {
     //Send a new post to the database.
     savePost: function(postData) {
         return axios.post("/api/posts", postData);
+    },
+    //Delete a post from the database.
+    deletePost: function(id) {
+        return axios.delete(`/api/posts/${id}`);
     }
 };
