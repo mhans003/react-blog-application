@@ -1,3 +1,4 @@
+import "./fontStyle.css";
 import { useEffect } from "react";
 
 //Include components
@@ -48,29 +49,31 @@ const Detail = props => {
                     <Row>
                         <Col size="md-12">
                             <Jumbotron>
-                                <h1>
-                                    {state.currentPost.title} by {state.currentPost.author}
-                                </h1>
+                                <div className="text-center">
+                                    <h1>
+                                        {state.currentPost.title}
+                                    </h1>
+                                    <h3>By: <i>{state.currentPost.author}</i></h3>
+                                </div>
                             </Jumbotron>
                         </Col>
                     </Row>
                     <Row>
                         <Col size="md-10 md-offset-1">
                             <article>
-                                <h1>Content:</h1>
-                                <p>{state.currentPost.body}</p>
+                                <p class="blog-content">{state.currentPost.body}</p>
                             </article>
                         </Col>
-                        {state.favorites.indexOf(state.currentPost) !== -1 ? (
-                            <button className="btn btn-danger" onClick={removeFavorite}>
-                                Remove from Favorites
-                            </button>
-                        ) : (
-                            <button className="btn btn-success" onClick={addFavorite}>
-                                Add to Favorites
-                            </button>
-                        )}
                     </Row>
+                    {state.favorites.indexOf(state.currentPost) !== -1 ? (
+                        <button className="btn btn-danger" onClick={removeFavorite}>
+                            Remove from Favorites
+                        </button>
+                    ) : (
+                        <button className="btn btn-success" onClick={addFavorite}>
+                            Add to Favorites
+                        </button>
+                    )}
                     <Row>
                         <Col size="md-2">
                             <Link to="/">Go Back</Link>

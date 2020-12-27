@@ -1,9 +1,11 @@
+import "./style.css";
 import { useEffect } from "react";
 
 //Include components
 import { Link } from "react-router-dom";
 import { ListItem, List } from "../List";
 import DeleteBtn from "../DeleteBtn";
+import { Row, Col, Container } from "../Grid";
 
 //Include Global Store
 import { useStoreContext } from "../../utils/GlobalState";
@@ -50,17 +52,25 @@ function PostList() {
 
     return (
         <div>
-            <h1>Blog Posts</h1>
+            <div className="text-center mb-4">
+                <h3>Blog Posts</h3>
+            </div>
             {state.posts.length ? (
                 <List>
                     {state.posts.map(post => (
                         <ListItem key={post._id}>
-                            <Link to={`/posts/${post._id}`}>
-                                <strong>
-                                    {post.title} by {post.author}
-                                </strong>
-                            </Link>
-                            <DeleteBtn onClick={() => removePost(post._id)}/>
+                            <div className="bg-light p-3">
+                                <Link to={`/posts/${post._id}`}>
+                                    <strong>{post.title}</strong>
+                                </Link> by <i>{post.author}</i>
+                               
+                            </div>
+                            <div className="text-muted p-3 blog-content">
+                                {`${post.body.substring(0,50)}...`}
+                            </div>
+                            <div>
+                                <DeleteBtn onClick={() => removePost(post._id)}/>
+                            </div>
                         </ListItem>
                     ))}
                 </List>

@@ -47,15 +47,14 @@ function PostForm() {
 
     return (
         <div>
-            <div className="jumbotron">
-                Blog Placeholder(image)
+            <div className="text-center mb-4">
+                <h3>Create Blog Post</h3>
             </div>
-            <h1>Create Blog Post</h1>
-            <form className="form-group my-5" onSubmit={handleSubmit}>
-                <input className="form-control mb-5" required ref={titleRef} placeholder="Title" maxLength="50"/>
-                <textarea className="form-control mb-5" required ref={bodyRef} placeholder="Post Body" maxLength="15000"/>
-                <input className="form-control mb-5" ref={authorRef} placeholder="Author Name" maxLength="50"/>
-                <button className="btn btn-success mt-3 mb-5" type="submit">
+            <form className="form-group my-3" onSubmit={handleSubmit}>
+                <input className="form-control mb-3" required ref={titleRef} placeholder="Title" maxLength="50"/>
+                <textarea className="form-control mb-3" required ref={bodyRef} placeholder="Post Body" maxLength="15000"/>
+                <input className="form-control mb-3" ref={authorRef} placeholder="Author Name" maxLength="50"/>
+                <button className="btn btn-primary btn-block mt-3 mb-3" type="submit">
                     Save
                 </button>
             </form>

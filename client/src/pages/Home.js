@@ -4,9 +4,16 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import PostForm from "../components/PostForm";
 import PostList from "../components/PostList";
+import Jumbotron from "../components/Jumbotron";
 
 const Home = () => {
     return (
+    <>
+        <Jumbotron>
+            <div className="text-center">
+                <h1>My Blog</h1>
+            </div>
+        </Jumbotron>
         <Container fluid>
             <Row>
                 <Col size="md-6">
@@ -17,6 +24,7 @@ const Home = () => {
                 </Col>
             </Row>
         </Container>
+    </>
     );
 };
 

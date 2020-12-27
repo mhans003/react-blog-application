@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Favorites from "./pages/Favorites";
+import Error from "./pages/Error";
 
 //Import components
 
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/home" component={Home}/>
             <Route exact path="/posts/:id" component={Detail}/>
             <Route exact path="/favorites" component={Favorites}/>
+            <Route component={Error}/>
           </Switch>
         </StoreProvider>
       </div>

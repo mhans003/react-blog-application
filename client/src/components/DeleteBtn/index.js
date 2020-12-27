@@ -1,5 +1,7 @@
+import "./style.css";
+
 function DeleteBtn(props) {
-    return <span className="fas fa-trash-alt" {...props} role="button" tabIndex="0"></span>;
+    return <button className="btn btn-sm btn-block btn-danger fas fa-trash-alt" {...props} type="button" tabIndex="0"></button>;
 }
 
 export default DeleteBtn;
