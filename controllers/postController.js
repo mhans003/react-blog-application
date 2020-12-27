@@ -8,5 +8,11 @@ module.exports = {
             .sort({ date: -1 })
             .then(dbModel => response.json(dbModel))
             .catch(error => response.status(422).json(error));
+    },
+    //Find one post from the database using ID.
+    findById: function(request, response) {
+        Post.findById(request.params.id)
+            .then(dbModel => response.json(dbModel))
+            .catch(error => response.status(422).json(error));
     }
 };
