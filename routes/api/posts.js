@@ -7,7 +7,8 @@ const postController = require("../../controllers/postController");
 //Non-ID specific routes
 router
     .route("/")
-    .get(postController.findAll);
+    .get(postController.findAll)
+    .post(postController.create);
 
 //These routes match specific blog posts based on ID.
 router

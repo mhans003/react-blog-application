@@ -14,5 +14,11 @@ module.exports = {
         Post.findById(request.params.id)
             .then(dbModel => response.json(dbModel))
             .catch(error => response.status(422).json(error));
+    },
+    //Send a new blog post to the database using the post data received by the client.
+    create: function(request, response) {
+        Post.create(request.body)
+            .then(dbModel => response.json(dbModel))
+            .catch(error => response.status(422).json(error));
     }
 };

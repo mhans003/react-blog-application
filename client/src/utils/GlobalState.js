@@ -4,7 +4,8 @@ import React, { createContext, useReducer, useContext } from "react";
 import {
     UPDATE_POSTS,
     LOADING,
-    SET_CURRENT_POST
+    SET_CURRENT_POST,
+    ADD_POST
 } from "./actions";
 
 //Create the Global Store.
@@ -28,6 +29,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 currentPost: action.post,
+                loading: false
+            };
+        case ADD_POST:
+            return {
+                ...state,
+                posts: [action.post, ...state.posts],
                 loading: false
             };
         default:
