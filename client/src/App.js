@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //Import pages
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
+import Favorites from "./pages/Favorites";
 
 //Import components
 
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/" component={Home}/>
             <Route exact path="/home" component={Home}/>
             <Route exact path="/posts/:id" component={Detail}/>
+            <Route exact path="/favorites" component={Favorites}/>
           </Switch>
         </StoreProvider>
       </div>

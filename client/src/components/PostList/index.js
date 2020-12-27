@@ -67,8 +67,8 @@ function PostList() {
             ) : (
                 <h3>No Posts Yet</h3>
             )}
-            <div>
-                Link to favorites here
+            <div className="mt-5">
+                <Link to="favorites">View Favorites</Link>
             </div>
         </div>
     );

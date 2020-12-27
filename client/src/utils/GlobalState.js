@@ -8,7 +8,8 @@ import {
     ADD_POST,
     REMOVE_POST,
     REMOVE_FAVORITE,
-    UPDATE_FAVORITES
+    UPDATE_FAVORITES,
+    ADD_FAVORITE
 
 } from "./actions";
 
@@ -60,6 +61,12 @@ const reducer = (state, action) => {
                 favorites: state.favorites.filter(post => {
                     return post._id !== action._id;
                 })
+            };
+        case ADD_FAVORITE: 
+            return {
+                ...state,
+                favorites: [action.post, ...state.favorites],
+                loading: false
             };
         default:
             return state;

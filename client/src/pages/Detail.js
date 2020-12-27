@@ -3,6 +3,7 @@ import { useEffect } from "react";
 //Include components
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+
 //include jumbotron below
 
 //Include API functionality
@@ -12,7 +13,7 @@ import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
 //Include actions (add favorites actions to this)
-import { SET_CURRENT_POST } from "../utils/actions";
+import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
 
 const Detail = props => {
     //Declare state and dispatch to use global state.
@@ -26,9 +27,21 @@ const Detail = props => {
             .catch(error => console.log(error));
     }, []);
     
-    //Add functions to handle favorites below.
+    //Functions that allow the user to add or remove this post as a favorite.
+    const addFavorite = () => {
+        dispatch({
+            type: ADD_FAVORITE,
+            post: state.currentPost
+        });
+    };
 
-    //Add functionality for adding favorites into return block below.
+    const removeFavorite = () => {
+        dispatch({
+            type: REMOVE_FAVORITE,
+            _id: state.currentPost._id
+        })
+    };
+
     return (
         <div>
             {state.currentPost ? (
@@ -47,6 +60,15 @@ const Detail = props => {
                                 <p>{state.currentPost.body}</p>
                             </article>
                         </Col>
+                        {state.favorites.indexOf(state.currentPost) !== -1 ? (
+                            <button className="btn btn-danger" onClick={removeFavorite}>
+                                Remove from Favorites
+                            </button>
+                        ) : (
+                            <button className="btn btn-success" onClick={addFavorite}>
+                                Add to Favorites
+                            </button>
+                        )}
                     </Row>
                     <Row>
                         <Col size="md-2">
