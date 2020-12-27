@@ -9,7 +9,8 @@ import {
     REMOVE_POST,
     REMOVE_FAVORITE,
     UPDATE_FAVORITES,
-    ADD_FAVORITE
+    ADD_FAVORITE,
+    UPDATE_POST
 
 } from "./actions";
 

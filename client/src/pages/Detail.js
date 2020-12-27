@@ -3,8 +3,7 @@ import { useEffect } from "react";
 //Include components
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-
-//include jumbotron below
+import Jumbotron from "../components/Jumbotron";
 
 //Include API functionality
 import API from "../utils/API";
@@ -48,9 +47,11 @@ const Detail = props => {
                 <Container fluid>
                     <Row>
                         <Col size="md-12">
-                            <h1>
-                                {state.currentPost.title} by {state.currentPost.author}
-                            </h1>
+                            <Jumbotron>
+                                <h1>
+                                    {state.currentPost.title} by {state.currentPost.author}
+                                </h1>
+                            </Jumbotron>
                         </Col>
                     </Row>
                     <Row>

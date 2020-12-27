@@ -27,5 +27,11 @@ module.exports = {
             .then(dbModel => dbModel.remove())
             .then(dbModel => response.json(dbModel))
             .catch(error => response.json(422).json(error));
+    },
+    //Update one post with new data passed in.
+    update: function(request, response) {
+        Post.findOneAndUpdate({ _id: request.params.id }, request.body)
+            .then(dbModel => response.json(dbModel))
+            .catch(error => response.status(422).json(error));
     }
 };
