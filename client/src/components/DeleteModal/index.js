@@ -10,10 +10,21 @@ function DeleteModal(props) {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid">
-                    Are you sure you want to delete this post?
+                    <p>Are you sure you want to delete this post?</p>
+                    <br/>
+                    <i>
+                        <strong>
+                            <span className="text-secondary">
+                                {`${props.postNameToDelete}`}
+                            </span>
+                        </strong>
+                    </i>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={props.removePost(props._id)}>
+                    <Button variant="primary" onClick={() => {
+                        props.removePost(props.postIdToDelete);
+                        props.handleModalClose();
+                    }}>
                         DELETE
                     </Button>
                 </Modal.Footer>
@@ -22,4 +33,4 @@ function DeleteModal(props) {
     );
 }
 
-export default EmployeeProfile;
+export default DeleteModal;
