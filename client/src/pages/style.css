@@ -1,5 +1,21 @@
+h1 {
+    color: rgba(30,30,70,0.9) !important;
+}
+
+.lighter {
+    color: rgba(30,30,70,0.7) !important;
+}
+
+.darker {
+    color: rgba(30,30,70,1.0) !important;
+}
+
 .blog-content {
     font-family: 'Amiri', serif !important;
+}
+
+.dim-background, .dim-background:focus {
+    background-color: rgba(248,249,255,1.0);
 }
 
 .btn-danger-inverted {
@@ -20,12 +36,34 @@
     font-weight: 200;
 }
 
-@media screen and (max-width: 540px) {
+.spaced-short {
+    letter-spacing: 0.7rem;
+}
+
+.spaced-long {
+    letter-spacing: 1.3rem;
+}
+
+@media screen and (max-width: 640px) {
     h1 {
         font-size: 3.0rem !important;
     }
 
     p {
         font-size: 1.0rem !important;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    #logo {
+        font-size: 2.0rem !important;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #logo {
+        font-size: 1.0rem !important;
+        font-weight: 700;
     }
 }

@@ -63,14 +63,14 @@ const Detail = props => {
                 <Link to="favorites">View Favorites</Link>
             </div>
             {state.currentPost ? (
-                <Container fluid>
-                    <Row>
-                        <Col size="md-12 md-offset-1">
-                            <hr className="mb-5"/>
-                            <article className="px-md-5">
-                                <p className="blog-content blog-detail-content">{state.currentPost.body}</p>
-                            </article>
-                            <hr className="mt-5"/>
+                <Container fluid nopadding>
+                    <Row noMargin={true}>
+                        <Col size="md-12 md-offset-1" noPadding>
+                            <div className="dim-background my-4">
+                                <article className="px-2 px-md-5">
+                                    <p className="blog-content blog-detail-content">{state.currentPost.body}</p>
+                                </article>
+                            </div>
                         </Col>
                     </Row>
                 </Container>

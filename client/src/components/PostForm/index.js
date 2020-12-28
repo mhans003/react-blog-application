@@ -51,9 +51,9 @@ function PostForm() {
                 <h3 className="large-heading">Create Blog Post</h3>
             </div>
             <form className="form-group my-3" onSubmit={handleSubmit}>
-                <input className="form-control mb-3" required ref={titleRef} placeholder="Title" maxLength="50"/>
-                <textarea className="form-control mb-3" required ref={bodyRef} placeholder="Post Body" maxLength="15000"/>
-                <input className="form-control mb-3" ref={authorRef} placeholder="Author Name" maxLength="50"/>
+                <input className="form-control mb-3 dim-background" required ref={titleRef} placeholder="Title" maxLength="50"/>
+                <textarea className="form-control mb-3 dim-background" required ref={bodyRef} placeholder="Post Body" maxLength="15000"/>
+                <input className="form-control mb-3 dim-background" ref={authorRef} placeholder="Author Name" maxLength="50"/>
                 <button className="btn btn-primary btn-block mt-3 mb-3" type="submit">
                     Save <i class="fal fa-save"></i>
                 </button>

@@ -11,7 +11,9 @@ const Home = () => {
     <>
         <Jumbotron>
             <div className="text-center">
-                <h1 class="display-1 large-heading">My Blog</h1>
+                <h1 id="logo" className="display-1 large-heading spaced-long"><span className="lighter">note</span><span className="darker">cloud</span></h1>
+                <hr/>
+                <h5 className="spaced-short darker">REACT BLOG</h5>
             </div>
         </Jumbotron>
         <Container fluid>
