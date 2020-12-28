@@ -1,0 +1,31 @@
+.blog-content {
+    font-family: 'Amiri', serif !important;
+}
+
+.btn-danger-inverted {
+    color: #d9534f;
+    background-color: #fff;
+}
+
+.btn-success-inverted {
+    color: #5cb85c;
+    background-color: #fff; 
+}
+
+.blog-detail-content {
+    font-size: 1.8rem;
+}
+
+.large-heading {
+    font-weight: 200;
+}
+
+@media screen and (max-width: 540px) {
+    h1 {
+        font-size: 3.0rem !important;
+    }
+
+    p {
+        font-size: 1.0rem !important;
+    }
+}

@@ -11,7 +11,7 @@ const Home = () => {
     <>
         <Jumbotron>
             <div className="text-center">
-                <h1>My Blog</h1>
+                <h1 class="display-1 large-heading">My Blog</h1>
             </div>
         </Jumbotron>
         <Container fluid>

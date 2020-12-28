@@ -53,7 +53,7 @@ function PostList() {
     return (
         <div>
             <div className="text-center mb-4">
-                <h3>Blog Posts</h3>
+                <h3 className="large-heading">Blog Posts</h3>
             </div>
             {state.posts.length ? (
                 <List>
@@ -77,7 +77,7 @@ function PostList() {
             ) : (
                 <h3>No Posts Yet</h3>
             )}
-            <div className="mt-5">
+            <div className="text-center mt-3">
                 <Link to="favorites">View Favorites</Link>
             </div>
         </div>

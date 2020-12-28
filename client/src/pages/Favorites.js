@@ -10,6 +10,7 @@ import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
 
 //Include global context
 import { useStoreContext } from "../utils/GlobalState";
+import Jumbotron from "../components/Jumbotron";
 
 const Favorites = () => {
     //Declare state/dispatch
@@ -35,27 +36,39 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div className="container my-5">
-            <h1 className="text-center">Favorite Posts</h1>
-            {state.favorites.length ? (
-                <List>
-                    <h3 className="my-5">Click a post to view details</h3>
-                    {state.favorites.map(post => (
-                        <ListItem key={post._id}>
-                            <Link to={`/posts/${post._id}`}>
-                                <strong>
-                                    {post.title} by {post.author}
-                                </strong>
-                            </Link>
-                            <DeleteBtn onClick={() => removeFromFavorites(post._id)}/>
-                        </ListItem>
-                    ))}
-                </List>
-            ) : (
-                <h3>No Favorites Yet</h3>
-            )}
-            <div className="mt-5">
-                <Link to="home">Go Back</Link>
+        <div>
+            <Jumbotron>
+                <div className="text-center">
+                    <h1 className="display-1 large-heading">Favorite Posts</h1>
+                </div>
+            </Jumbotron>
+            <div className="container my-5">
+                {state.favorites.length ? (
+                    <List>
+                        <h3 className="mb-5">Click a post to view details</h3>
+                        {state.favorites.map(post => (
+                            <ListItem key={post._id}>
+                                <div className="bg-light p-3">
+                                    <Link to={`/posts/${post._id}`}>
+                                        <strong>{post.title}</strong>
+                                    </Link> by <i>{post.author}</i>
+                                
+                                </div>
+                                <div className="text-muted p-3 blog-content">
+                                    {`${post.body.substring(0,50)}...`}
+                                </div>
+                                <div>
+                                    <DeleteBtn onClick={() => removeFromFavorites(post._id)}/>
+                                </div>
+                            </ListItem>
+                        ))}
+                    </List>
+                ) : (
+                    <h3 className="text-center">No Favorites Yet</h3>
+                )}
+                <div className="text-center mt-3">
+                    <Link to="/">Go Back</Link>
+                </div>
             </div>
         </div>
     );

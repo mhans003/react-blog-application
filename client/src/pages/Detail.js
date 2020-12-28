@@ -1,4 +1,4 @@
-import "./fontStyle.css";
+import "./style.css";
 import { useEffect } from "react";
 
 //Include components
@@ -44,45 +44,42 @@ const Detail = props => {
 
     return (
         <div>
-            {state.currentPost ? (
-                <Container fluid>
-                    <Row>
-                        <Col size="md-12">
-                            <Jumbotron>
-                                <div className="text-center">
-                                    <h1>
-                                        {state.currentPost.title}
-                                    </h1>
-                                    <h3>By: <i>{state.currentPost.author}</i></h3>
-                                </div>
-                            </Jumbotron>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col size="md-10 md-offset-1">
-                            <article>
-                                <p class="blog-content">{state.currentPost.body}</p>
-                            </article>
-                        </Col>
-                    </Row>
+            <Jumbotron>
+                <div className="text-center">
+                    <h1 className="display-3 large-heading">{state.currentPost.title}</h1>
+                    <h4>By: <i>{state.currentPost.author}</i></h4>
                     {state.favorites.indexOf(state.currentPost) !== -1 ? (
-                        <button className="btn btn-danger" onClick={removeFavorite}>
+                        <button className="btn btn-danger btn-danger-inverted mt-3" onClick={removeFavorite}>
                             Remove from Favorites
                         </button>
                     ) : (
-                        <button className="btn btn-success" onClick={addFavorite}>
+                        <button className="btn btn-success btn-success-inverted mt-3" onClick={addFavorite}>
                             Add to Favorites
                         </button>
                     )}
+                </div>
+            </Jumbotron>
+            <div className="text-center mt-3">
+                <Link to="favorites">View Favorites</Link>
+            </div>
+            {state.currentPost ? (
+                <Container fluid>
                     <Row>
-                        <Col size="md-2">
-                            <Link to="/">Go Back</Link>
+                        <Col size="md-12 md-offset-1">
+                            <hr className="mb-5"/>
+                            <article className="px-md-5">
+                                <p className="blog-content blog-detail-content">{state.currentPost.body}</p>
+                            </article>
+                            <hr className="mt-5"/>
                         </Col>
                     </Row>
                 </Container>
             ) : (
-                <div>Loading...</div>
+                <div className="text-center">Loading...</div>
             )}
+            <div className="text-center">
+                <Link to="/">Go Back</Link>
+            </div>
         </div>
     );
 };

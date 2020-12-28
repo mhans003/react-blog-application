@@ -1,3 +1,8 @@
 body {
     font-family: 'Nunito', sans-serif !important;
 }
+
+.jumbotron {
+    background-image: url("/assets/images/cloud.jpg");
+    background-size: cover;
+}
