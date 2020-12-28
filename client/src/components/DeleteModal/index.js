@@ -21,11 +21,11 @@ function DeleteModal(props) {
                     </i>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={() => {
+                    <Button variant="danger" onClick={() => {
                         props.removePost(props.postIdToDelete);
                         props.handleModalClose();
                     }}>
-                        DELETE
+                        YES, DELETE
                     </Button>
                 </Modal.Footer>
             </Modal>

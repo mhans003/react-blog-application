@@ -49,19 +49,16 @@ const Detail = props => {
                     <h1 className="display-3 large-heading">{state.currentPost.title}</h1>
                     <h4>By: <i>{state.currentPost.author}</i></h4>
                     {state.favorites.indexOf(state.currentPost) !== -1 ? (
-                        <button className="btn btn-danger btn-danger-inverted mt-3" onClick={removeFavorite}>
+                        <button className="btn btn-danger mt-3" onClick={removeFavorite}>
                             Remove from Favorites
                         </button>
                     ) : (
-                        <button className="btn btn-success btn-success-inverted mt-3" onClick={addFavorite}>
+                        <button className="btn btn-primary mt-3" onClick={addFavorite}>
                             Add to Favorites
                         </button>
                     )}
                 </div>
             </Jumbotron>
-            <div className="text-center mt-3">
-                <Link to="favorites">View Favorites</Link>
-            </div>
             {state.currentPost ? (
                 <Container fluid nopadding>
                     <Row noMargin={true}>

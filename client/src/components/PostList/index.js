@@ -73,7 +73,7 @@ function PostList() {
                 <List>
                     {state.posts.map(post => (
                         <ListItem key={post._id}>
-                            <div className="bg-light p-3">
+                            <div className="slightly-larger dim-background p-3">
                                 <Link to={`/posts/${post._id}`}>
                                     <strong>{post.title}</strong>
                                 </Link> by <i>{post.author}</i>

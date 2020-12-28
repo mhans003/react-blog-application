@@ -10,6 +10,11 @@ h1 {
     color: rgba(30,30,70,1.0) !important;
 }
 
+.slightly-larger {
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
 .blog-content {
     font-family: 'Amiri', serif !important;
 }
@@ -18,14 +23,15 @@ h1 {
     background-color: rgba(248,249,255,1.0);
 }
 
-.btn-danger-inverted {
-    color: #d9534f;
-    background-color: #fff;
+.btn-primary {
+    background-color: rgba(100,180,240,1.0) !important;
+    border: none;
 }
 
-.btn-success-inverted {
-    color: #5cb85c;
-    background-color: #fff; 
+.btn-primary:hover {
+    background-color: #fff !important;
+    color: rgba(100,180,240,1.0) !important;
+    border: solid 1px rgba(100,180,240,1.0) !important;
 }
 
 .blog-detail-content {
