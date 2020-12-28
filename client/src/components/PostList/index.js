@@ -23,6 +23,7 @@ function PostList() {
     const [modalShow, setModalShow] = useState(false);
     const [postIdToDelete, setPostIdToDelete] = useState("");
     const [postNameToDelete, setPostNameToDelete] = useState("");
+    const [postAuthorToDelete, setPostAuthorToDelete] = useState("");
 
     //Handle getting, deleting posts below
     const getPosts = () => {
@@ -58,10 +59,11 @@ function PostList() {
 
     //Handle the opening/closing of the modal to delete a post.
     const handleModalClose = () => setModalShow(false);
-    const handleModalShow = (id, name) => {
+    const handleModalShow = (id, name, author) => {
         setModalShow(true);
         setPostIdToDelete(id);
         setPostNameToDelete(name);
+        setPostAuthorToDelete(author);
     };
 
     return (
@@ -83,7 +85,7 @@ function PostList() {
                                 {`${post.body.substring(0,50)}...`}
                             </div>
                             <div>
-                                <DeleteBtn onClick={() => handleModalShow(post._id, post.title)}/>
+                                <DeleteBtn onClick={() => handleModalShow(post._id, post.title, post.author)}/>
                             </div>
                         </ListItem>
                     ))}
@@ -99,6 +101,7 @@ function PostList() {
                 modalShow={modalShow}
                 postIdToDelete={postIdToDelete}
                 postNameToDelete={postNameToDelete}
+                postAuthorToDelete={postAuthorToDelete}
                 removePost={removePost}
             />
         </div>

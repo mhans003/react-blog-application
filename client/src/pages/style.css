@@ -42,6 +42,10 @@ h1 {
     font-weight: 200;
 }
 
+.spaced-mini {
+    letter-spacing: 0.4rem;
+}
+
 .spaced-short {
     letter-spacing: 0.7rem;
 }
