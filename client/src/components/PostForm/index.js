@@ -40,9 +40,10 @@ function PostForm() {
         })
         .catch(error => console.log(error));
 
-        //Reset the current value of the title and body references.
+        //Reset the current value of the field references.
         titleRef.current.value = "";
         bodyRef.current.value = "";
+        authorRef.current.value = "";
     };
 
     return (
