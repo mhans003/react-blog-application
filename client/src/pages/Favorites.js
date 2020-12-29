@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 //Import components
 import { ListItem, List } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
 import { Row, Col, Container } from "../components/Grid";
+import RemoveFavorite from "../components/RemoveFavorite";
 
 //Import actions
 import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
@@ -16,6 +17,12 @@ import Jumbotron from "../components/Jumbotron";
 const Favorites = () => {
     //Declare state/dispatch
     const [state, dispatch] = useStoreContext();
+
+    //Declare state for modal and removing favorites.
+    const [favoriteShow, setFavoriteShow] = useState(false);
+    const [favoriteIdToRemove, setFavoriteIdToRemove] = useState("");
+    const [favoriteTitleToRemove, setFavoriteTitleToRemove] = useState("");
+    const [favoriteAuthorToRemove, setFavoriteAuthorToRemove] = useState("");
 
     //Get the user's favorite posts
     const getFavorites = () => {
@@ -29,6 +36,15 @@ const Favorites = () => {
             type: REMOVE_FAVORITE,
             _id: id
         });
+    };
+
+    //Handle the opening/closing of the modal to delete a post.
+    const handleFavoriteClose = () => setFavoriteShow(false);
+    const handleFavoriteShow = (id, title, author) => {
+        setFavoriteShow(true);
+        setFavoriteIdToRemove(id);
+        setFavoriteTitleToRemove(title);
+        setFavoriteAuthorToRemove(author);
     };
 
     //When the page loads, get the favorites.
@@ -62,7 +78,7 @@ const Favorites = () => {
                                     <Row>
                                         <Col size="4"></Col>
                                         <Col size="4">
-                                            <DeleteBtn onClick={() => removeFromFavorites(post._id)}/>
+                                            <DeleteBtn onClick={() => handleFavoriteShow(post._id, post.title, post.author)}/>
                                         </Col>
                                         <Col size="4"></Col>
                                     </Row>
@@ -77,6 +93,14 @@ const Favorites = () => {
                     <Link to="/">Go Back</Link>
                 </div>
             </div>
+            <RemoveFavorite
+                handleFavoriteClose={handleFavoriteClose}
+                favoriteShow={favoriteShow}
+                id={favoriteIdToRemove}
+                removeFromFavorites={removeFromFavorites}
+                title={favoriteTitleToRemove}
+                author={favoriteAuthorToRemove}
+            />
         </div>
     );
 };
