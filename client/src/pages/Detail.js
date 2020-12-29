@@ -64,7 +64,7 @@ const Detail = props => {
                     <Row noMargin={true}>
                         <Col size="md-12 md-offset-1" noPadding>
                             <div className="dim-background my-4">
-                                <article className="px-2 px-md-5">
+                                <article className="p-2 p-md-5">
                                     <p className="blog-content blog-detail-content">{state.currentPost.body}</p>
                                 </article>
                             </div>

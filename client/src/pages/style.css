@@ -2,6 +2,10 @@ h1 {
     color: rgba(30,30,70,0.9) !important;
 }
 
+article {
+    border: 1px solid rgba(100,180,240,0.5);
+}
+
 .lighter {
     color: rgba(30,30,70,0.7) !important;
 }
