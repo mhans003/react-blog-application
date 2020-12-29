@@ -72,7 +72,7 @@ const Detail = props => {
                     </Row>
                 </Container>
             ) : (
-                <div className="text-center">Loading...</div>
+                <div className="text-center large-heading">Loading...</div>
             )}
             <div className="text-center mb-5">
                 <Link to="/">Go Back</Link>

@@ -114,7 +114,7 @@ function PostList() {
                     ))}
                 </List>
             ) : (
-                <h3>No Posts Yet</h3>
+                <h3 className="large-heading text-center">No Posts Yet</h3>
             )}
             <div className="text-center mt-3 mb-5">
                 <Link to="favorites">View Favorites</Link>

@@ -87,7 +87,7 @@ const Favorites = () => {
                         ))}
                     </List>
                 ) : (
-                    <h3 className="text-center">No Favorites Yet</h3>
+                    <h3 className="text-center large-heading">No Favorites Yet</h3>
                 )}
                 <div className="text-center mt-3 mb-5">
                     <Link to="/">Go Back</Link>
