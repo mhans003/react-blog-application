@@ -6,6 +6,8 @@
 [React Blog Application](https://blogapplication-mh.herokuapp.com/)
 
 ![Screenshot of Application](./client/public/assets/images/reactblog1.jpg)
+![Screenshot of Application](./client/public/assets/images/reactblog2.jpg)
+![Screenshot of Application](./client/public/assets/images/reactblog3.jpg)
 
 ## Description 
 
