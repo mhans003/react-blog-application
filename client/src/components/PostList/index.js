@@ -100,10 +100,16 @@ function PostList() {
                             <div className="text-muted p-3 blog-content">
                                 {`${post.body.substring(0,50)}...`}
                             </div>
-                            <div>
-                                <EditBtn onClick={() => handleEditShow(post.title, post.body, post.author, post._id)}/>
-                                <DeleteBtn onClick={() => handleModalShow(post._id, post.title, post.author)}/>
-                            </div>
+                            <Container fluid>
+                                <Row>
+                                    <Col size="sm-6">
+                                        <EditBtn onClick={() => handleEditShow(post.title, post.body, post.author, post._id)}/>
+                                    </Col>
+                                    <Col size="sm-6">
+                                        <DeleteBtn onClick={() => handleModalShow(post._id, post.title, post.author)}/>
+                                    </Col>
+                                </Row>
+                            </Container>
                         </ListItem>
                     ))}
                 </List>
