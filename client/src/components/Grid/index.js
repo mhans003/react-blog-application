@@ -16,9 +16,9 @@ function Col({ size, noPadding, children }) {
     return (
         <div
             className={size
-            .split(" ")
-            .map(size => "col-" + size)
-            .join(" ") + `${noPadding ? "px-0" : ""}`}
+                .split(" ")
+                .map(size => "col-" + size)
+                .join(" ") + `${noPadding ? "px-0" : ""}`}
         >
             {children}
         </div>

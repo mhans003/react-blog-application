@@ -1,5 +1,10 @@
 .btn-danger {
     background-color: #fff;
     color: #d9534f;
-    border: none;
+    border-color: #d9534f;
+}
+.btn-danger:hover, .btn-secondary:focus {
+    background-color: #d9534f;
+    color: #fff;
+    border-color: #d9534f;
 }
