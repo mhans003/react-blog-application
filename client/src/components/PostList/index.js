@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 //Include components
 import { Link } from "react-router-dom";
 import { ListItem, List } from "../List";
+import EditBtn from "../EditBtn";
 import DeleteBtn from "../DeleteBtn";
 import { Row, Col, Container } from "../Grid";
 import DeleteModal from "../DeleteModal";
+import EditForm from "../EditForm";
 
 //Include Global Store
 import { useStoreContext } from "../../utils/GlobalState";
@@ -24,6 +26,12 @@ function PostList() {
     const [postIdToDelete, setPostIdToDelete] = useState("");
     const [postNameToDelete, setPostNameToDelete] = useState("");
     const [postAuthorToDelete, setPostAuthorToDelete] = useState("");
+
+    const [editShow, setEditShow] = useState(false);
+    const [postTitleToEdit, setPostTitleToEdit] = useState("");
+    const [postBodyToEdit, setPostBodyToEdit] = useState("");
+    const [postAuthorToEdit, setPostAuthorToEdit] = useState("");
+    const [postIdToEdit, setPostIdToEdit] = useState("");
 
     //Handle getting, deleting posts below
     const getPosts = () => {
@@ -66,6 +74,15 @@ function PostList() {
         setPostAuthorToDelete(author);
     };
 
+    const handleEditClose = () => setEditShow(false);
+    const handleEditShow = (title, body, author, id) => {
+        setEditShow(true);
+        setPostTitleToEdit(title);
+        setPostBodyToEdit(body);
+        setPostAuthorToEdit(author);
+        setPostIdToEdit(id);
+    };
+
     return (
         <div>
             <div className="text-center mb-4">
@@ -79,12 +96,12 @@ function PostList() {
                                 <Link to={`/posts/${post._id}`}>
                                     <strong>{post.title}</strong>
                                 </Link> by <i>{post.author}</i>
-                               
                             </div>
                             <div className="text-muted p-3 blog-content">
                                 {`${post.body.substring(0,50)}...`}
                             </div>
                             <div>
+                                <EditBtn onClick={() => handleEditShow(post.title, post.body, post.author, post._id)}/>
                                 <DeleteBtn onClick={() => handleModalShow(post._id, post.title, post.author)}/>
                             </div>
                         </ListItem>
@@ -103,6 +120,14 @@ function PostList() {
                 postNameToDelete={postNameToDelete}
                 postAuthorToDelete={postAuthorToDelete}
                 removePost={removePost}
+            />
+            <EditForm
+                handleEditClose={handleEditClose}
+                editShow={editShow}
+                title={postTitleToEdit}
+                body={postBodyToEdit}
+                author={postAuthorToEdit}
+                id={postIdToEdit}
             />
         </div>
     );

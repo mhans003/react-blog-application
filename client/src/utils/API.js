@@ -17,5 +17,9 @@ export default {
     //Delete a post from the database.
     deletePost: function(id) {
         return axios.delete(`/api/posts/${id}`);
+    },
+    //Update a post.
+    updatePost: function(id, updateData) {
+        return axios.put(`/api/posts/${id}`, updateData);
     }
 };

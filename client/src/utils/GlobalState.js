@@ -9,9 +9,7 @@ import {
     REMOVE_POST,
     REMOVE_FAVORITE,
     UPDATE_FAVORITES,
-    ADD_FAVORITE,
-    UPDATE_POST
-
+    ADD_FAVORITE
 } from "./actions";
 
 //Create the Global Store.
