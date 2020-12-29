@@ -8,7 +8,7 @@ import Jumbotron from "../components/Jumbotron";
 
 const Home = () => {
     return (
-    <>
+    <div>
         <Jumbotron>
             <div className="text-center">
                 <h1 id="logo" className="display-1 large-heading spaced-long"><span className="lighter">note</span><span className="darker">cloud</span></h1>
@@ -26,7 +26,7 @@ const Home = () => {
                 </Col>
             </Row>
         </Container>
-    </>
+    </div>
     );
 };
 

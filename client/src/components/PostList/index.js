@@ -116,7 +116,7 @@ function PostList() {
             ) : (
                 <h3>No Posts Yet</h3>
             )}
-            <div className="text-center mt-3">
+            <div className="text-center mt-3 mb-5">
                 <Link to="favorites">View Favorites</Link>
             </div>
             <DeleteModal

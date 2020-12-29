@@ -74,7 +74,7 @@ const Detail = props => {
             ) : (
                 <div className="text-center">Loading...</div>
             )}
-            <div className="text-center">
+            <div className="text-center mb-5">
                 <Link to="/">Go Back</Link>
             </div>
         </div>
