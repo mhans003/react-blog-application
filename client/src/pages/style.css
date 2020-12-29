@@ -6,12 +6,20 @@ article {
     border: 1px solid rgba(100,180,240,0.5);
 }
 
+a {
+    color: rgba(90,170,230,1.0);
+}
+
 .lighter {
     color: rgba(30,30,70,0.7) !important;
 }
 
 .darker {
     color: rgba(30,30,70,1.0) !important;
+}
+
+.heavier {
+    font-weight: 500;
 }
 
 .slightly-larger {

@@ -94,8 +94,8 @@ function PostList() {
                         <ListItem key={post._id}>
                             <div className="slightly-larger dim-background p-3">
                                 <Link to={`/posts/${post._id}`}>
-                                    <strong>{post.title}</strong>
-                                </Link> by <i>{post.author}</i>
+                                    <strong><i>{post.title}</i></strong>
+                                </Link> by <span className="lighter heavier">{post.author}</span>
                             </div>
                             <div className="text-muted p-3 blog-content">
                                 {`${post.body.substring(0,50)}...`}
