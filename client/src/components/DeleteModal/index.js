@@ -6,7 +6,7 @@ function DeleteModal(props) {
             <Modal show={props.modalShow} onHide={props.handleModalClose}>
                 <Modal.Header closeButton className="dim-background">
                     <Modal.Title>
-                        <h2 className="spaced-mini text-primary large-heading">confirm</h2>
+                        <h2 className="spaced-mini text-primary large-heading ml-2">Confirm</h2>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="show-grid slightly-larger">
@@ -20,11 +20,16 @@ function DeleteModal(props) {
                     </i>
                 </Modal.Body>
                 <Modal.Footer className="dim-background">
+                    <Button variant="secondary" onClick={() => {
+                        props.handleModalClose();
+                    }}>
+                        Cancel
+                    </Button>
                     <Button variant="danger" onClick={() => {
                         props.removePost(props.postIdToDelete);
                         props.handleModalClose();
                     }}>
-                        YES, DELETE
+                        Delete
                     </Button>
                 </Modal.Footer>
             </Modal>

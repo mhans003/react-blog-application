@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { ListItem, List } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
+import { Row, Col, Container } from "../components/Grid";
 
 //Import actions
 import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
@@ -39,16 +40,16 @@ const Favorites = () => {
         <div>
             <Jumbotron>
                 <div className="text-center">
-                    <h1 className="display-1 large-heading">Favorite Posts</h1>
+                    <h1 className="display-1 large-heading">Favorites</h1>
                 </div>
             </Jumbotron>
             <div className="container my-5">
                 {state.favorites.length ? (
                     <List>
-                        <h3 className="mb-5">Click a post to view details</h3>
+                        <h3 className="mb-5 large-heading text-center">Click a post to view details</h3>
                         {state.favorites.map(post => (
                             <ListItem key={post._id}>
-                                <div className="bg-light p-3">
+                                <div className="slightly-larger dim-background p-3">
                                     <Link to={`/posts/${post._id}`}>
                                         <strong>{post.title}</strong>
                                     </Link> by <i>{post.author}</i>
@@ -57,9 +58,15 @@ const Favorites = () => {
                                 <div className="text-muted p-3 blog-content">
                                     {`${post.body.substring(0,50)}...`}
                                 </div>
-                                <div>
-                                    <DeleteBtn onClick={() => removeFromFavorites(post._id)}/>
-                                </div>
+                                <Container fluid>
+                                    <Row>
+                                        <Col size="4"></Col>
+                                        <Col size="4">
+                                            <DeleteBtn onClick={() => removeFromFavorites(post._id)}/>
+                                        </Col>
+                                        <Col size="4"></Col>
+                                    </Row>
+                                </Container>
                             </ListItem>
                         ))}
                     </List>
