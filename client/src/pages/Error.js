@@ -11,10 +11,10 @@ const Error = () => {
                     <Col size="md-12">
                         <Jumbotron>
                             <div className="text-center">
-                                <h1>404 - Page Not Found</h1>
-                                <h3><Link to="/">Go Back</Link></h3>
+                                <h1 className="large-heading">404 - Page Not Found</h1>
                             </div>
                         </Jumbotron>
+                        <h3 className="large-heading text-center"><Link to="/">Go Back</Link></h3>
                     </Col>
                 </Row>
             </Container>
