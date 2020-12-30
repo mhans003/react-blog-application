@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Favorites from "./pages/Favorites";
 import Error from "./pages/Error";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 //Import components
 
@@ -25,6 +27,8 @@ function App() {
             <Route exact path="/home" component={Home}/>
             <Route exact path="/posts/:id" component={Detail}/>
             <Route exact path="/favorites" component={Favorites}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={Register}/>
             <Route component={Error}/>
           </Switch>
         </StoreProvider>

@@ -7,6 +7,21 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
+//Configure Passport and Express Session
+const User = require("./models/User");
+app.use(require("express-session")({
+    secret: "Tricky is the best",
+    resave: false,
+    saveUninitialized: false
+}));
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 //Set server port locally to 3001, since React will run on 3000.
 const PORT = process.env.PORT || 3001;
 

@@ -6,7 +6,7 @@ const apiRoutes = require("./api");
 //Set up Express Router.
 const router = require("express").Router();
 
-//Include API routes.
+//Include API routes and auth routes.
 router.use("/api", apiRoutes);
 
 //If API routes are not used, use the React app.
