@@ -19,6 +19,9 @@ const Detail = props => {
     //Declare state and dispatch to use global state.
     const [state, dispatch] = useStoreContext();
 
+    const bodyWithSpaces = state.currentPost.body.split("\n");
+    console.log(bodyWithSpaces);
+
     //When the page loads, get the blog post matching the ID in the URL.
     useEffect(() => {
         API.getPost(props.match.params.id)
@@ -65,7 +68,9 @@ const Detail = props => {
                         <Col size="md-12 md-offset-1" noPadding>
                             <div className="dim-background my-4">
                                 <article className="p-2 p-md-5">
-                                    <p className="blog-content blog-detail-content">{state.currentPost.body}</p>
+                                    <p className="blog-content blog-detail-content">
+                                        {bodyWithSpaces.map(line => line.length > 0 ? <p>{line}</p> : "")}
+                                    </p>
                                 </article>
                             </div>
                         </Col>
