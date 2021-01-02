@@ -74,7 +74,7 @@ function PostForm() {
                     Save <i className="fal fa-save"></i>
                 </button>
             </form>
-            <hr className="mb-4"/>
+            <hr className="mb-4 mt-4"/>
             <SaveModal
                 handleSaveClose={handleSaveClose}
                 saveShow={saveShow}

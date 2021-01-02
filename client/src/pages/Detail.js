@@ -71,6 +71,7 @@ const Detail = props => {
                                     <p className="blog-content blog-detail-content">
                                         {bodyWithSpaces.map(line => line.length > 0 ? <p>{line}</p> : "")}
                                     </p>
+                                    <hr/>
                                 </article>
                             </div>
                         </Col>

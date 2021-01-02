@@ -116,9 +116,10 @@ function PostList() {
             ) : (
                 <h3 className="large-heading text-center">No Posts Yet</h3>
             )}
-            <div className="text-center mt-3 mb-5">
+            <div className="text-center mt-3 mb-2">
                 <Link to="favorites">View Favorites</Link>
             </div>
+            <hr className="mb-5"/>
             <DeleteModal
                 handleModalClose={handleModalClose}
                 modalShow={modalShow}
