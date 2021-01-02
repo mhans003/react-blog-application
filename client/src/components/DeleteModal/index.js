@@ -11,13 +11,7 @@ function DeleteModal(props) {
                 </Modal.Header>
                 <Modal.Body className="show-grid slightly-larger">
                     <p>Are you sure you want to delete this post?</p>
-                    <i>
-                        <strong>
-                            <span className="text-secondary mx-3 large-heading">
-                                {`"${props.postNameToDelete}" by ${props.postAuthorToDelete}`}
-                            </span>
-                        </strong>
-                    </i>
+                    <strong><i>{props.postNameToDelete}</i></strong> by <span className="lighter heavier">{props.postAuthorToDelete}</span>
                 </Modal.Body>
                 <Modal.Footer className="dim-background">
                     <Button variant="secondary" onClick={() => {

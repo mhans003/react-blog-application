@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
+import SaveModal from "../SaveModal";
 
 //Include Global State
 import { useStoreContext } from "../../utils/GlobalState";
@@ -14,6 +15,11 @@ function PostForm() {
     const titleRef = useRef();
     const bodyRef = useRef();
     const authorRef = useRef();
+
+    //Set up Modal
+    const [saveShow, setSaveShow] = useState(false);
+    const [titleSaved, setTitleSaved] = useState("");
+    const [authorSaved, setAuthorSaved] = useState("");
 
     //Declare state and dispatch below
     const [state, dispatch] = useStoreContext();
@@ -37,6 +43,7 @@ function PostForm() {
                 type: ADD_POST,
                 post: result.data
             });
+            handleSaveOpen(result.data.title, result.data.author);
         })
         .catch(error => console.log(error));
 
@@ -44,6 +51,14 @@ function PostForm() {
         titleRef.current.value = "";
         bodyRef.current.value = "";
         authorRef.current.value = "";
+    };
+
+    //Handle the opening/closing of the modal to confirm save of post.
+    const handleSaveClose = () => setSaveShow(false);
+    const handleSaveOpen = (title, author) => {
+        setTitleSaved(title);
+        setAuthorSaved(author);
+        setSaveShow(true);
     };
 
     return (
@@ -60,6 +75,12 @@ function PostForm() {
                 </button>
             </form>
             <hr className="mb-4"/>
+            <SaveModal
+                handleSaveClose={handleSaveClose}
+                saveShow={saveShow}
+                title={titleSaved}
+                author={authorSaved}
+            />
         </div>
     );
 }
