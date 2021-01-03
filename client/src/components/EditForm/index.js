@@ -59,10 +59,10 @@ function EditForm(props) {
                 <Modal.Body className="show-grid slightly-larger">
                     <div>
                         <form className="form-group my-3" onSubmit={handleSubmit}>
-                            <input className="form-control mb-3 dim-background" required ref={titleRef} placeholder="Title" defaultValue={props.title} maxLength="50"/>
-                            <textarea className="form-control mb-3 dim-background" rows="8" required ref={bodyRef} placeholder="Post Body" defaultValue={props.body} maxLength="15000"/>
-                            <input className="form-control mb-3 dim-background" ref={authorRef} placeholder="Author" defaultValue={props.author} maxLength="50"/>
-                            <button className="btn btn-primary btn-block mt-3 mb-3" type="submit" onClick={() => {
+                            <input className="form-control form-control-lg mb-3 dim-background" required ref={titleRef} placeholder="Title" defaultValue={props.title} maxLength="50"/>
+                            <textarea className="form-control form-control-lg mb-3 dim-background" rows="8" required ref={bodyRef} placeholder="Post Body" defaultValue={props.body} maxLength="15000"/>
+                            <input className="form-control form-control-lg mb-3 dim-background" ref={authorRef} placeholder="Author" defaultValue={props.author} maxLength="50"/>
+                            <button className="btn btn-primary btn-lg btn-block mt-3 mb-3" type="submit" onClick={() => {
                                 props.handleEditClose();
                             }}>
                                 Save <i className="fal fa-save"></i>

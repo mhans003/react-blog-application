@@ -37,6 +37,11 @@ hr {
     font-family: 'Amiri', serif !important;
 }
 
+.blog-summary-content {
+    font-size: 1.4rem;
+    color: rgba(70,110,170,0.7);
+}
+
 .dim-background, .dim-background:focus {
     background-color: rgba(248,249,255,1.0);
 }

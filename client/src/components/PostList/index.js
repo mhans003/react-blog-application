@@ -97,8 +97,8 @@ function PostList() {
                                     <strong><i>{post.title}</i></strong>
                                 </Link> by <span className="lighter heavier">{post.author}</span>
                             </div>
-                            <div className="text-muted p-3 blog-content">
-                                {`${post.body.substring(0,50)}...`}
+                            <div className="p-3 blog-content blog-summary-content">
+                                {`${post.body.substring(0,35)}...`}
                             </div>
                             <Container fluid>
                                 <Row>
